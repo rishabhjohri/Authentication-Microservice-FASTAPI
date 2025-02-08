@@ -36,7 +36,7 @@
          # Verify if MongoDB is running:
          docker ps
          docker exec -it mongodb mongo
-         #NOTE : Abobe command will start mongo shell -> To quit the shell , type quit()
+         #NOTE : Above command will start mongo shell -> To quit the shell , type quit()
 
    Now , you can change datacenter's connection type from NAT -> to Host only :
 
