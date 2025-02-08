@@ -15,10 +15,12 @@
 5) Once the lubuntu stuff is done , dont forget to save the state of VMs)
    Do this for both VMs :
    5.1> Install docker :
+   
         sudo apt update && sudo apt install -y docker.io
+   
         git clone 
    
-6) Now , to the main part :
+7) Now , to the main part :
 
 6.1> Power on datacenter VM : 
 
