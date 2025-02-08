@@ -27,7 +27,8 @@
    
          # Pull MongoDB Docker image
          docker pull mongo:4.2
-            
+         # Create a Docker network
+         docker network create auth-network
          # Run MongoDB container
          docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=adminpass --restart unless-stopped mongo:4.2
          # Verify if MongoDB is running:
@@ -35,6 +36,13 @@
          docker exec -it mongodb mongo
          #NOTE : Abobe command will start mongo shell -> To quit the shell , type quit()
 
+   Now , you can change datacenter's connection type from NAT -> to Host only :
+
+   Also keep in mind to note down the IP address of both VMs : use "ip a" or "ifconfig" command  and try PING command to test inter VM communication.
+
+   NOTE : Also change this IP address in this repo : server : Authentication-Microservice-FASTAPI -> database.py -> MONGO_URI (make sure to use the datacenter IP where mongobd is running)
+
+   
    For server VM:
    5.3>
    
@@ -44,7 +52,17 @@
 
          docker build -t auth-service .
 
+         # Create a Docker network
+         docker network create auth-network
+
    Switch to Host only connection now
+
+        # Run the Authentication Microservice
+        docker run -d --name auth-container --network auth-network -p 8000:8000 -e MONGO_URI="mongodb://admin:adminpass@192.168.56.107:27017/auth_service?authSource=admin" auth-service
+         # Verify if auth-container is running:
+         docker ps
+         
+   
 
  
 
