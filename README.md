@@ -1,3 +1,4 @@
+![Alt Text](images/architecture.png)
 #Steps to setup : 
 
 1) Download and install virtualbox
