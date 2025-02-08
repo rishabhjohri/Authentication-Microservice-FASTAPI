@@ -11,14 +11,14 @@
    Note : for downloading and building the docker image , we want the VMs to be able to access the Internet so keep network type as  : NAT
           once , this microservice is setup and its time to test , we want these VMs to communicate with each other : So , connection type = Host only
 
-5) Install lubuntu in both VMs ( pretty standard installation ;) , keep everything default , just click next !)
-6) Once the lubuntu stuff is done , dont forget to save the state of VMs)
+4) Install lubuntu in both VMs ( pretty standard installation ;) , keep everything default , just click next !)
+5) Once the lubuntu stuff is done , dont forget to save the state of VMs)
    Do this for both VMs :
    5.1> Install docker :
-        $ sudo apt update && sudo apt install -y docker.io
-        $ git clone 
+        sudo apt update && sudo apt install -y docker.io
+        git clone 
    
-8) Now , to the main part :
+6) Now , to the main part :
 
 6.1> Power on datacenter VM : 
 
