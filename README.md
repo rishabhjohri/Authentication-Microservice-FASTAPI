@@ -74,7 +74,8 @@
 
         # Login with registered credentials
         curl -X POST "http://192.168.56.108:8000/api/auth/login" -H "Content-Type: application/json" -d "{\"email\": \"test@example.com\", \"password\": \"securepassword\"}"
-   
+
+Demo Video youtube link : https://youtu.be/jGAxaTDG5hI
 
  
 
