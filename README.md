@@ -13,8 +13,12 @@
 
 4) Install lubuntu in both VMs ( pretty standard installation ;) , keep everything default , just click next !)
 5) Once the lubuntu stuff is done , dont forget to save the state of VMs)
+   
    Do this for both VMs :
-   5.1> Install docker : (NOTE : if it's showing permission denied use sudo before every command)
+   
+   5.1> Install docker :
+
+   (NOTE : if it's showing permission denied use sudo before every command)
    
         sudo apt update && sudo apt install -y docker.io
    
