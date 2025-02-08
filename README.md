@@ -23,6 +23,7 @@
         sudo apt update && sudo apt install -y docker.io
    
    For datacenter VM:
+   
    5.2> Install mongodb  using docker and run it as a container :
    
          # Pull MongoDB Docker image
@@ -44,6 +45,7 @@
 
    
    For server VM:
+   
    5.3>
    
          git clone https://github.com/rishabhjohri/Authentication-Microservice-FASTAPI.git
@@ -61,7 +63,16 @@
         docker run -d --name auth-container --network auth-network -p 8000:8000 -e MONGO_URI="mongodb://admin:adminpass@192.168.56.107:27017/auth_service?authSource=admin" auth-service
          # Verify if auth-container is running:
          docker ps
-         
+
+6) To test the Authentication Microservice :
+
+   You can either create a Client VM or even do it from your local host machine ( I used my host windows cmd to run this) :
+
+         # Register a user
+         curl -X POST "http://192.168.56.108:8000/api/auth/register" -H "Content-Type: application/json" -d "{\"username\": \"testuser\", \"email\": \"test@example.com\", \"password\": \"securepassword\"}"
+
+        # Login with registered credentials
+        curl -X POST "http://192.168.56.108:8000/api/auth/login" -H "Content-Type: application/json" -d "{\"email\": \"test@example.com\", \"password\": \"securepassword\"}"
    
 
  
